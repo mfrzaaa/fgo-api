@@ -123,7 +123,7 @@ const deleteServant = async (req, res, next) => {
         const { id } = req.params;
         const findservant = await prisma.servant.findUnique({
             where: {
-                id: parseInt(id, 10),
+                id: id,
             },
             include: {
                 illustrator: true,
@@ -138,7 +138,7 @@ const deleteServant = async (req, res, next) => {
             
         await prisma.servant.delete({
             where: {
-                id: parseInt(id, 10),
+                id: id,
             },
             include: {
                 illustrator: true,

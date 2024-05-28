@@ -90,7 +90,7 @@ const updateServant = async (req, res, next) => {
 
         const findservant = await prisma.servant.findUnique({
             where: {
-                id: parseInt(id, 10),
+                id: id,
             },
             include: {
                 illustrator: true,

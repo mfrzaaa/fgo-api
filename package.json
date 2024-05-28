@@ -4,7 +4,8 @@
   "description": "api fgo",
   "main": "index.js",
   "scripts": {
-    "start-dev": "nodemon index.js"
+    "start-dev": "nodemon index.js",
+    "postinstall": "prisma generate"
   },
   "author": "faraz",
   "license": "ISC",

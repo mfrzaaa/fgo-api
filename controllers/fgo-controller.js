@@ -103,7 +103,7 @@ const updateServant = async (req, res, next) => {
 
         const updateservant = await prisma.servant.update({
             where: {
-                id: parseInt(id, 10),
+                id: id,
             },
             data: servant,
         });

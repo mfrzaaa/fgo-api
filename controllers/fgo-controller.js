@@ -66,11 +66,7 @@ const addServant = async (req, res, next) => {
 
 const getIllustrators = async (req, res, next) => {
     try {
-        const allIllustrators = await prisma.illustrator.findMany({
-            include: {
-                illustrator: true,
-            },
-        });
+        const allIllustrators = await prisma.illustrator.findMany();
 
         return res.status(200).json({
             message: 'Success',

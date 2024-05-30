@@ -64,6 +64,23 @@ const addServant = async (req, res, next) => {
     }
 };
 
+const getIllustrators = async (req, res, next) => {
+    try {
+        const allIllustrators = await prisma.illustrator.findMany({
+            include: {
+                illustrator: true,
+            },
+        });
+
+        return res.status(200).json({
+            message: 'Success',
+            data: allIllustrators,
+        });
+    } catch (error) {
+        return next(error);
+    }
+};
+
 const addIllustrator = async (req, res, next) => {
     console.log(req.body);
     try {
@@ -157,6 +174,7 @@ module.exports = {
     getAllServants,
     getServantById,
     addServant,
+    getIllustrators,
     addIllustrator,
     updateServant,
     deleteServant,
